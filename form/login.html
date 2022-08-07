@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="login.css">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+	body{
+    margin: 0px;
+    padding: 0px;
+}
+ .box{
+	position: absolute;
+    height:100vh;
+    width:100%;
+    overflow: auto;
+    background-attachment: fixed;
+    background-position-x: 1000px;
+    transition: 1s;
+    animation: move infinite linear 30s;
+	/* background: url("data:image/svg+xml,%3Csvg width=\"30\" height=\"30\" viewBox=\"0 0 38 38\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E %3Cstyle%3E@keyframes foo%7Bfrom%7Btransform: scale(1); %7Dto %7Btransform: scale(1.1);%7D %7D%3C/style%3E%3Crect style=\"animation:foo 1s infinite alternate-reverse;\" width=\"30\" height=\"30\" fill=\"url(\"logo.png\")\"/%3E%3C/svg%3E"); */
+  }
+  @keyframes move{
+    0%{background-position-x:left;}
+    100%{background-position-x:right;}
+  }
+  #logosvg{
+	transform: rotateZ(90deg);
+  }
+</style>
+</head>
+<body>	
+	<div style="display:none;" class="color"></div>
+    <div style='background: url(logo.svg) yellow ; background-size:25px 25px;' class="box"></div>
+
+	<div class="section">
+		<div class="container">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center py-5">
+					<div class="section pb-5 pt-5 pt-sm-2 text-center">
+						<h6 class="mb-0 pb-3"><span class="lin selected">Log In </span><span class="sup">Sign Up</span></h6>
+			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+			          	<label for="reg-log"></label>
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div style="display:flex;" class="logo">
+										<a href="https://www.patriciancollege.ac.in/"><img src="logo.png" alt=""></a>
+											<h4 style="color: white; font-size: 12PX; MARGIN-TOP:5PX; margin-bottom:15px;">PATRICIAN COLLEGE OF ARTS AND SCIENCE</h4>
+									</div>
+									<div class="center-wrap">
+										<div class="section text-center">
+											<h4 class="txt pb-3">Log In</h4>
+											<div class="form-group">
+												<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+												<svg class="input-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M12 13L4 8V18H20V8L12 13Z" fill="#e1e668" fill-opacity="1"/>
+													<path d="M20 5H4C3.44772 5 3 5.44772 3 6V18C3 18.5523 3.44772 19 4 19H20C20.5523 19 21 18.5523 21 18V6C21 5.44772 20.5523 5 20 5Z" stroke="#e1e668" stroke-width="2" stroke-linecap="round"/>
+													<path d="M3 6.5L12 12L21 6.5" stroke="#e1e668" stroke-width="2" stroke-linecap="round"/>
+													</svg>
+													
+											</div>	
+											<div class="form-group mt-2">
+												<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+												<svg style="margin-left:4px;" class="input-icon" width="24" height="24" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<g clip-path="url(#clip0_128_24)">
+													<path d="M11 11H10V10H11V11ZM8 11H9V10H8V11ZM13 11H12V10H13V11Z" fill="#e1e668"/>
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M3 6V3.5C3 3.04037 3.09053 2.58525 3.26642 2.16061C3.44231 1.73597 3.70012 1.35013 4.02513 1.02513C4.35013 0.700121 4.73597 0.442313 5.16061 0.266422C5.58525 0.0905301 6.04037 0 6.5 0C6.95963 0 7.41475 0.0905301 7.83939 0.266422C8.26403 0.442313 8.64987 0.700121 8.97487 1.02513C9.29988 1.35013 9.55769 1.73597 9.73358 2.16061C9.90947 2.58525 10 3.04037 10 3.5V6H11.5C11.8978 6 12.2794 6.15804 12.5607 6.43934C12.842 6.72064 13 7.10218 13 7.5V8.05C13.5651 8.16476 14.0732 8.47136 14.4382 8.91787C14.8031 9.36438 15.0025 9.92332 15.0025 10.5C15.0025 11.0767 14.8031 11.6356 14.4382 12.0821C14.0732 12.5286 13.5651 12.8352 13 12.95V13.5C13 13.8978 12.842 14.2794 12.5607 14.5607C12.2794 14.842 11.8978 15 11.5 15H1.5C1.10218 15 0.720644 14.842 0.43934 14.5607C0.158035 14.2794 0 13.8978 0 13.5L0 7.5C0 7.10218 0.158035 6.72064 0.43934 6.43934C0.720644 6.15804 1.10218 6 1.5 6H3ZM4 3.5C4 2.83696 4.26339 2.20107 4.73223 1.73223C5.20107 1.26339 5.83696 1 6.5 1C7.16304 1 7.79893 1.26339 8.26777 1.73223C8.73661 2.20107 9 2.83696 9 3.5V6H4V3.5ZM8.5 9C8.10218 9 7.72064 9.15804 7.43934 9.43934C7.15804 9.72064 7 10.1022 7 10.5C7 10.8978 7.15804 11.2794 7.43934 11.5607C7.72064 11.842 8.10218 12 8.5 12H12.5C12.8978 12 13.2794 11.842 13.5607 11.5607C13.842 11.2794 14 10.8978 14 10.5C14 10.1022 13.842 9.72064 13.5607 9.43934C13.2794 9.15804 12.8978 9 12.5 9H8.5Z" fill="#e1e668"/>
+													</g>
+													<defs>
+													<clipPath id="clip0_128_24">
+													<rect width="15" height="15" fill="white"/>
+													</clipPath>
+													</defs>
+													</svg>
+													
+											</div>
+											<button style="color: #0f8743;" class="custom-btn btn-11 mt-4">SUBMIT<div class="dot"></div></button>
+                            				<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+				      					</div>
+			      					</div>
+			      				</div>
+								<div class="card-back">
+									<div style="display:flex;" class="logo">
+										<a href="https://www.patriciancollege.ac.in/"><img src="logo.png" alt=""></a>
+											<h4 style="color: white; font-size: 12PX; MARGIN-TOP:5PX; margin-bottom:15px;">PATRICIAN COLLEGE OF ARTS AND SCIENCE</h4>
+									</div>
+									<div class="center-wrap">
+										<div class="section text-center">
+											<h4 class="txt pb-3">Sign Up</h4>
+											<div class="form-group">
+												<input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+												<svg class="input-icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M16.563 15.9C16.404 15.848 15.399 15.395 16.027 13.486H16.018C17.655 11.8 18.906 9.087 18.906 6.416C18.906 2.309 16.175 0.155998 13.001 0.155998C9.825 0.155998 7.109 2.308 7.109 6.416C7.109 9.098 8.353 11.822 10 13.504C10.642 15.188 9.494 15.813 9.254 15.901C5.93 17.103 2.03 19.294 2.03 21.457V22.268C2.03 25.215 7.744 25.885 13.032 25.885C18.328 25.885 23.97 25.215 23.97 22.268V21.457C23.97 19.229 20.051 17.055 16.563 15.9Z" fill="#e1e668"/>
+													</svg>
+													
+											</div>	
+											<div class="form-group mt-2">
+												<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+												<svg class="input-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M12 13L4 8V18H20V8L12 13Z" fill="#e1e668" fill-opacity="1"/>
+													<path d="M20 5H4C3.44772 5 3 5.44772 3 6V18C3 18.5523 3.44772 19 4 19H20C20.5523 19 21 18.5523 21 18V6C21 5.44772 20.5523 5 20 5Z" stroke="#e1e668" stroke-width="2" stroke-linecap="round"/>
+													<path d="M3 6.5L12 12L21 6.5" stroke="#e1e668" stroke-width="2" stroke-linecap="round"/>
+													</svg>
+											</div>	
+											<div class="form-group mt-2">
+												<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+												<svg style="margin-left:4px;" class="input-icon" width="24" height="24" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<g clip-path="url(#clip0_128_24)">
+													<path d="M11 11H10V10H11V11ZM8 11H9V10H8V11ZM13 11H12V10H13V11Z" fill="#e1e668"/>
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M3 6V3.5C3 3.04037 3.09053 2.58525 3.26642 2.16061C3.44231 1.73597 3.70012 1.35013 4.02513 1.02513C4.35013 0.700121 4.73597 0.442313 5.16061 0.266422C5.58525 0.0905301 6.04037 0 6.5 0C6.95963 0 7.41475 0.0905301 7.83939 0.266422C8.26403 0.442313 8.64987 0.700121 8.97487 1.02513C9.29988 1.35013 9.55769 1.73597 9.73358 2.16061C9.90947 2.58525 10 3.04037 10 3.5V6H11.5C11.8978 6 12.2794 6.15804 12.5607 6.43934C12.842 6.72064 13 7.10218 13 7.5V8.05C13.5651 8.16476 14.0732 8.47136 14.4382 8.91787C14.8031 9.36438 15.0025 9.92332 15.0025 10.5C15.0025 11.0767 14.8031 11.6356 14.4382 12.0821C14.0732 12.5286 13.5651 12.8352 13 12.95V13.5C13 13.8978 12.842 14.2794 12.5607 14.5607C12.2794 14.842 11.8978 15 11.5 15H1.5C1.10218 15 0.720644 14.842 0.43934 14.5607C0.158035 14.2794 0 13.8978 0 13.5L0 7.5C0 7.10218 0.158035 6.72064 0.43934 6.43934C0.720644 6.15804 1.10218 6 1.5 6H3ZM4 3.5C4 2.83696 4.26339 2.20107 4.73223 1.73223C5.20107 1.26339 5.83696 1 6.5 1C7.16304 1 7.79893 1.26339 8.26777 1.73223C8.73661 2.20107 9 2.83696 9 3.5V6H4V3.5ZM8.5 9C8.10218 9 7.72064 9.15804 7.43934 9.43934C7.15804 9.72064 7 10.1022 7 10.5C7 10.8978 7.15804 11.2794 7.43934 11.5607C7.72064 11.842 8.10218 12 8.5 12H12.5C12.8978 12 13.2794 11.842 13.5607 11.5607C13.842 11.2794 14 10.8978 14 10.5C14 10.1022 13.842 9.72064 13.5607 9.43934C13.2794 9.15804 12.8978 9 12.5 9H8.5Z" fill="#e1e668"/>
+													</g>
+													<defs>
+													<clipPath id="clip0_128_24">
+													<rect width="15" height="15" fill="white"/>
+													</clipPath>
+													</defs>
+													</svg>
+											</div>
+											<button style="color: #0f8743;" class="custom-btn btn-11 mt-4">SUBMIT<div class="dot"></div></button>
+				      					</div>
+			      					</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+		      	</div>
+	      	</div>
+	    </div>
+	</div>
+</body>
+<script>
+	var check = document.querySelector("#reg-log");
+$("#reg-log").click(function () {
+  $(".lin").toggleClass("selected");
+  $(".sup").toggleClass("selected");
+});
+var lin = document.querySelector(".lin").addEventListener("click", function () {
+  check.checked = false;
+  $(".lin").addClass("selected");
+  $(".sup").removeClass("selected");
+});
+var lin = document.querySelector(".sup").addEventListener("click", function () {
+  check.checked = true;
+  $(".lin").removeClass("selected");
+  $(".sup").addClass("selected");
+});
+// function rclick(){
+//   alert();
+// }
+
+</script>
+</html>

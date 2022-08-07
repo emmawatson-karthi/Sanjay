@@ -1,0 +1,428 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSIC PLAYER</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+    *{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: monospace, Verdana;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+}
+
+.main-box{
+    position: absolute;
+    width: 500px;
+    min-height: 600px;
+    background: rgba(0, 238, 255, .25);
+    
+    border-radius: 15px;
+    box-shadow: 5px 20px 40px rgba(0, 0, 0, .2);
+    padding-bottom: 2%;
+    box-shadow: 
+              
+              0 0 100px #03e9f4;
+}
+h4{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+    text-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4
+}
+.img{
+    width: 80%;
+    height: 50%;
+    margin: 4% 10% 5% 10%;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgba(0, 238, 255);
+    box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4;
+              
+}
+img{
+  width: 100%;
+}
+p{
+    margin: 1%;
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4
+}
+.slider{
+    position: relative; 
+    width: 80%;
+    height: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin:10% 10%;
+    background-color: rgba(0, 238, 255, .5);
+}
+
+.slider input{
+    width: 100%;
+}
+
+.btn{
+    margin:5%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+button{
+    width: 50px;
+    color:white;
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 2%;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5),
+                -1px -1px 5px rgba(0, 238, 255);
+    
+}
+button:hover{
+    box-shadow: inset 5px 5px 3px rgba(0, 0, 0, .5),
+                1px 1px 1px rgba(0, 238, 255);
+}
+
+@media screen and (max-width:600px){
+    .main-box{
+    width: 90%;  
+    padding-bottom: 5%;
+    border-radius: 30px;
+    padding-top: 3%;
+        }
+button{
+    width: 45px;
+    font-size: 20px;
+    padding: 10px;
+}
+p{
+    font-size: 25px;
+}
+h4{
+    font-size: 30px;
+}
+.slider{
+    margin-bottom: 60px;
+}
+}
+@media screen and (max-width:350px){
+    .main-box{
+    width: 90%;  
+    padding-bottom: 2%;
+    border-radius: 30px;
+    padding-bottom: 2%;
+        }
+button{
+    width: 45px;
+    font-size: 20px;
+    padding: 10px;
+}
+p{
+    font-size: 15px;
+}
+h4{
+    font-size: 20px;
+}
+.slider{
+    margin-bottom: 60px;
+}
+}
+.current-time{
+    position: absolute;
+    top: 250%;
+    left:0px;
+  padding: 10px;
+  color: white;
+    text-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4
+
+}
+.total-duration {
+    position: absolute;
+    top: 250%;
+    right:0px;
+    padding: 10px;
+    color: white;
+    text-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4
+}
+input[type=range]{
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    background: transparent; 
+}
+input[type=range]:hover{
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    background: linear-gradient(180deg, rgba(4, 240, 255, 0) 0%, rgba(1, 169, 180, 0.46) 52.6%, rgba(1, 169, 180, 0.41) 52.61%, rgba(1, 169, 180, 0) 100%);
+    border-radius: 40px;
+}
+
+input[type=range]:hover{
+    cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4
+   
+}
+#yt
+{
+    color: white;
+    text-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4;
+             
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:  5%;
+}
+
+</style>
+</head>
+<body>
+ 
+    <audio src="https://z.zz.fo/oiK8E.m4a" class="aaa" id="aaa"></audio>
+
+    <div class="main-box">
+        <h4>Music Player</h4>
+        <a class="link" href="#"><div class="img"><img id="track-image" src="" alt=""></div></a>
+        <p id="title">Song Name</p>
+        <a class="link" href="#"><marquee behavior="scroll" direction="" id="yt">Lyrics</marquee></a>
+        <!--<div class="slider"><div  id="ball" ></div></div>-->
+        <div class="slider">
+            <div class="current-time">00:00</div>
+            <input type="range" min="1" max="100"
+              value="0" class="seek_slider" onchange="seekTo()">
+            <div class="total-duration">00:00</div>
+          </div>
+
+
+        <div class="btn">
+                <button class="prev-btn" id="prev"><i class="fa fa-step-backward"></i></button>
+                <button class="play-btn" id="play"><i class="fa fa-play"></i></button>
+                <button class="next-btn" id="next"><i class="fa fa-step-forward"></i></button>
+        </div>
+        
+    </div>
+    <script>
+                
+    let prev = document.querySelector('#prev');
+    let play = document.querySelector('#play');
+    let next = document.querySelector('#next');
+    let title = document.querySelector('#title');
+    let yt = document.querySelector('#yt');
+    let link = document.querySelector('.link');
+    let img = document.querySelector('#track-image');
+    let seek_slider = document.querySelector(".seek_slider");
+    let volume_slider = document.querySelector(".volume_slider");
+    let curr_time = document.querySelector(".current-time");
+    let total_duration = document.querySelector(".total-duration");
+
+   
+    
+    
+    var autoplay = 1;
+
+    var no = 0;
+    var playing_song = false;
+    var updateTimer;
+
+    var audio = document.querySelector('#aaa');
+    var ball = document.querySelector('#ball');
+    
+    
+    var all_name = [
+        "Levitating",
+        "Money",
+        "Señorita",
+        "HOPE"];
+
+    var all_img = [
+        "s1.png",
+        "s2.png",
+        "s3.png",
+        "s4.png"];
+
+    var all_audio = [
+        "Dua Lipa - Levitating (Lyrics)(MP3_320K).mp3",
+        "LISA - _MONEY_ EXCLUSIVE PERFORMANCE VIDEO(MP3_160K).mp3",
+        "Shawn Mendes_ Camila Cabello - Señorita (Lyrics)(MP3_70K)_1.mp3",
+        "XXXTentacion - HOPE (Lyrics) --(MP3_160K).mp3"];
+
+    var all_yt = [
+        "Dua Lipa",
+        "BlackPink-Lisa",
+        "Shawn Mendes & Camila Cabello",
+        "XXXTentacion"];
+
+    var all_ytch = [
+        "https://www.youtube.com/channel/UCBT-Ux2dGaT2Nb_FYEehoxQ",
+        "https://www.youtube.com/channel/UCBT-Ux2dGaT2Nb_FYEehoxQ",
+        "https://www.youtube.com/channel/UCBT-Ux2dGaT2Nb_FYEehoxQ",
+        "https://www.youtube.com/channel/UCBT-Ux2dGaT2Nb_FYEehoxQ"];
+   
+    load(no);   
+    
+    function load(no){
+        clearInterval(updateTimer);
+        resetValues();
+        img.setAttribute("src",all_img[no]); 
+        audio.setAttribute("src",all_audio[no]); 
+        title.innerHTML = (all_name[no]);
+        yt.innerHTML = (all_yt[no]);
+        link.setAttribute("href",all_ytch[no]);
+        audio.addEventListener("ended", nextk);
+        updateTimer = setInterval(seekUpdate, 1000);   
+    }
+    function resetValues() 
+        {
+            curr_time.textContent = "00:00";
+            total_duration.textContent = "00:00";
+            seek_slider.value = 0;
+        }
+    function seekTo() {
+
+  seekto = audio.duration * (seek_slider.value / 100);
+  audio.currentTime = seekto;
+  
+}
+  
+function seekUpdate() {
+  let seekPosition = 0;
+  
+  // Check if the current track duration is a legible number
+  if (!isNaN(audio.duration)) {
+    seekPosition = audio.currentTime * (100 / audio.duration);
+    seek_slider.value = seekPosition;
+  
+    // Calculate the time left and the total duration
+    let currentMinutes = Math.floor(audio.currentTime / 60);
+    let currentSeconds = Math.floor(audio.currentTime - currentMinutes * 60);
+    let durationMinutes = Math.floor(audio.duration / 60);
+    let durationSeconds = Math.floor(audio.duration - durationMinutes * 60);
+  
+    // Add a zero to the single digit time values
+    if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+    if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+    if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
+    if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+  
+    // Display the updated duration
+    curr_time.textContent = currentMinutes + ":" + currentSeconds;
+    total_duration.textContent = durationMinutes + ":" + durationSeconds;
+  }
+}
+  
+    
+
+
+
+        function playk() {
+                        if(playing_song == false)
+                            {    
+                                palysong(); 
+                            }
+                        else
+                            {
+                                pausesong();   
+                            }
+                     }
+    function palysong()
+    {  
+        playing_song = true;
+        play.innerHTML = '<i class="fa fa-pause"></i>';
+        audio.play();   
+    }
+    
+    function pausesong()
+        {
+            playing_song = false;
+            play.innerHTML = '<i class="fa fa-play"></i>';
+            audio.pause(); 
+        }  
+        
+
+    function nextk(){
+
+                    if(no<all_audio.length-1)
+                        {
+                            no += 1;
+                            load(no);
+                            
+                            palysong();
+                        }
+                    else
+                        {
+                            no = 0;
+                            load(no);
+                        
+                            palysong();
+                        }
+                    }
+
+    function prevk(){
+
+                    if(no>0)
+                            {
+                                no -= 1;
+                                load(no);
+                                prev.innerHTML = '<i class="fa fa-backward"></i>';
+                                palysong();
+                            }
+                    else
+                            {
+                                no = all_audio.length-1;
+                                load(no);
+                                prev.innerHTML = '<i class="fa fa-backward"></i>';
+                                palysong();
+                            }
+                    }
+    play.addEventListener("click",playk);
+    prev.addEventListener("click",prevk);
+    next.addEventListener("click",nextk);
+    </script>
+</body>
+  </html>

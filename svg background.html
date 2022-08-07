@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            height:100vh;
+            width:100%;
+            overflow: auto;
+            background-attachment: fixed;
+            background-position-x: 1000px;
+            transition: 1s;
+            animation: move infinite linear 30s;
+            /* background-image: url("data:image/svg+xml,%3Csvg width='1034' height='1688' viewBox='0 0 1034 1688' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle%3E svg %7B max-width:300px; width: 90%25; height: auto; fill: none; stroke: white; stroke-width: 10; // border:2px solid red; transition:.2s; animation: move 1s forwards 4s ease-in-out; %7D path %7B stroke-dasharray: 3500; stroke-dashoffset:-3500; fill-opacity: 0; animation: draw 6s infinite forwards ease-in-out; %7D @keyframes draw %7B 50%25%7Bfill-opacity: 0;%7D 55%25%7Bstroke-dashoffset: 0;%7D 60%25%7Bfill-opacity: .5;%7D 63%25%7Bfill-opacity: 0;%7D 65%25%7Bfill-opacity: 1;%7D 67%25%7Bfill-opacity: 0;%7D 90%25%7Bfill-opacity: 1; stroke-dashoffset: 0;%7D 100%25%7Bstroke-width: 0; fill-opacity: 1; stroke-dashoffset: 0;%7D %7D %3C/style%3E%3Cg filter='url(%23filter0_d_120_8)'%3E%3Cpath d='M373.963 882.844L613.611 763.02L1033 963.26V1194.39L33 1663.17L57.2311 1418.06L801.872 1075.1L373.963 882.844Z' fill='%23FF422E'/%3E%3Cpath d='M1033 963.26L613.611 763.02L373.963 882.844L801.872 1075.1M1033 963.26L801.872 1075.1M1033 963.26V1194.39L33 1663.17L57.2311 1418.06L801.872 1075.1' stroke='white'/%3E%3Cpath d='M67.746 425.911V186.263L706.807 492.48V718.814L94.3736 1011.72V785.383L440.532 612.304L67.746 425.911Z' fill='%2357D3F3'/%3E%3Cpath d='M440.532 612.304L67.746 425.911V186.263L706.807 492.48M440.532 612.304L706.807 492.48M440.532 612.304L94.3736 785.383V1011.72L706.807 718.814V492.48' stroke='white'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_120_8' x='0.415894' y='181.469' width='1033.08' height='1506.52' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dx='-18' dy='10'/%3E%3CfeGaussianBlur stdDeviation='7'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.53 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_120_8'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_120_8' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E"); */
+            background-size: 30px; 
+            background-image: url("data:image/svg+xml, %3Csvg class='biz' width='30' height='42' viewBox='0 0 30 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle%3E.biz%7Banimation: biz infinite 3s ;%7D.biz-logo-t1,.biz-logo-t2 %7Banimation: bizlogotop infinite 3s;%7D.biz-logo-b1,.biz-logo-b2 %7Banimation: bizlogobot infinite 3s;%7D @keyframes bizlogotop %7B 0%25 %7B fill: %23ff1800; stroke: %23fd1800; %7D 50%25 %7B fill: %2300c9fd; stroke: %2300cbff; %7D 100%25 %7B fill: %23ff1800; stroke: %23fd1800; %7D %7D @keyframes bizlogobot %7B 0%25 %7B fill: %2300c9fd; stroke: %2300cbff; %7D 50%25 %7B fill: %23ff1800; stroke: %23fd1800; %7D 100%25 %7B fill: %2300c9fd; stroke: %2300cbff; %7D %7D @keyframes biz%7B 0%25, 100%25 %7B transform: rotateZ(20deg); %7D 50%25%7B transform: rotateZ(-20deg); %7D %7D%3C/style%3E%3Cg filter='url(%23filter0_d_120_7)'%3E%3Cpath class='biz-logo-t1' d='M11.8571 16.7143L17 14.1429L24.7143 17.5714L25 23.2857L5.28571 33V27.5714L19 20.4286L11.8571 16.7143Z' fill='%23FF422E' /%3E%3Cpath class='biz-logo-t2' d='M24.7143 17.5714L17 14.1429L11.8571 16.7143L19 20.4286M24.7143 17.5714L19 20.4286M24.7143 17.5714L25 23.2857L5.28571 33V27.5714L19 20.4286' stroke='%23FF422E' /%3E%3Cpath class='biz-logo-b1' d='M5.28571 6.4286V1.28574L19 7.85717V12.7143L5.85713 19V14.1429L13.2857 10.4286L5.28571 6.4286Z' fill='%2357D3F3' /%3E%3Cpath class='biz-logo-b2' d='M13.2857 10.4286L5.28571 6.4286V1.28574L19 7.85717M13.2857 10.4286L19 7.85717M13.2857 10.4286L5.85713 14.1429V19L19 12.7143V7.85717' stroke='%2357D3F3' /%3E%3Cpath d='M5.57143 1L18.9268 7.57143L12.6411 10.4286L5 6.42857L5.57143 1Z' fill='url(%23paint0_linear_120_7)' /%3E%3Cpath d='M13.2857 11.8571L25 17.5714L18.7142 20.4286L14.216 18.1428L13.2857 11.8571Z' fill='url(%23paint1_linear_120_7)' /%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_120_7' x='0.785706' y='0.491722' width='28.7301' height='41.3121' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix' /%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha' /%3E%3CfeOffset dy='4' /%3E%3CfeGaussianBlur stdDeviation='2' /%3E%3CfeComposite in2='hardAlpha' operator='out' /%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0' /%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_120_7' /%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_120_7' result='shape' /%3E%3C/filter%3E%3ClinearGradient id='paint0_linear_120_7' x1='31.5714' y1='11.8571' x2='6.71428' y2='6.42857' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-opacity='0.87' /%3E%3Cstop offset='1' stop-opacity='0' /%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear_120_7' x1='27.3588' y1='17.2857' x2='16.216' y2='18.7143' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-opacity='0.59' /%3E%3Cstop offset='1' stop-opacity='0' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+            }
+
+  @keyframes move{
+    0%{background-position-x:left;}
+    100%{background-position-x:right;}
+  }
+    </style>
+</head>
+<body>
+    <svg class="biz" width="100" height="100" viewBox="0 0 30 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <style>.biz{animation: biz infinite 3s ;}.biz-logo-t1,.biz-logo-t2 {animation: bizlogotop infinite 3s;}.biz-logo-b1,.biz-logo-b2 {animation: bizlogobot infinite 3s;} @keyframes bizlogotop {
+            0% {
+              fill: #ff1800;
+              stroke: #fd1800;
+            }
+            50% {
+              fill: #00c9fd;
+              stroke: #00cbff;
+            }
+            100% {
+              fill: #ff1800;
+              stroke: #fd1800;
+            }
+          }
+          @keyframes bizlogobot {
+            0% {
+              fill: #00c9fd;
+              stroke: #00cbff;
+            }
+            50% {
+              fill: #ff1800;
+              stroke: #fd1800;
+            }
+            100% {
+              fill: #00c9fd;
+              stroke: #00cbff;
+            }
+        }
+        @keyframes biz{
+            0%, 100% {
+             transform: rotateZ(20deg);
+            }
+            50%{
+                transform: rotateZ(-20deg);
+            }
+        }</style>
+        <g filter="url(#filter0_d_120_7)">
+          <path class="biz-logo-t1" d="M11.8571 16.7143L17 14.1429L24.7143 17.5714L25 23.2857L5.28571 33V27.5714L19 20.4286L11.8571 16.7143Z" fill="#FF422E" />
+          <path class="biz-logo-t2" d="M24.7143 17.5714L17 14.1429L11.8571 16.7143L19 20.4286M24.7143 17.5714L19 20.4286M24.7143 17.5714L25 23.2857L5.28571 33V27.5714L19 20.4286" stroke="#FF422E" />
+          <path class="biz-logo-b1" d="M5.28571 6.4286V1.28574L19 7.85717V12.7143L5.85713 19V14.1429L13.2857 10.4286L5.28571 6.4286Z" fill="#57D3F3" />
+          <path class="biz-logo-b2" d="M13.2857 10.4286L5.28571 6.4286V1.28574L19 7.85717M13.2857 10.4286L19 7.85717M13.2857 10.4286L5.85713 14.1429V19L19 12.7143V7.85717" stroke="#57D3F3" />
+          <path d="M5.57143 1L18.9268 7.57143L12.6411 10.4286L5 6.42857L5.57143 1Z" fill="url(#paint0_linear_120_7)" />
+          <path d="M13.2857 11.8571L25 17.5714L18.7142 20.4286L14.216 18.1428L13.2857 11.8571Z" fill="url(#paint1_linear_120_7)" />
+        </g>
+        <defs>
+          <filter id="filter0_d_120_7" x="0.785706" y="0.491722" width="28.7301" height="41.3121" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+            <feOffset dy="4" />
+            <feGaussianBlur stdDeviation="2" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_120_7" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_120_7" result="shape" />
+          </filter>
+          <linearGradient id="paint0_linear_120_7" x1="31.5714" y1="11.8571" x2="6.71428" y2="6.42857" gradientUnits="userSpaceOnUse">
+            <stop stop-opacity="0.87" />
+            <stop offset="1" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="paint1_linear_120_7" x1="27.3588" y1="17.2857" x2="16.216" y2="18.7143" gradientUnits="userSpaceOnUse">
+            <stop stop-opacity="0.59" />
+            <stop offset="1" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
+	
+        <svg style="padding: 100px;" width="1034" height="1688" viewBox="0 0 1034 1688" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <style>   
+                    svg {
+                        max-width:300px;
+                        width: 90%;
+                        height: auto;
+                        fill: none;
+                        stroke: white;
+                        stroke-width: 10;
+                        // border:2px solid red;
+                        transition:.2s;
+                        margin:10px;
+                        animation: move 1s forwards 4s ease-in-out;
+                    }
+                        
+                    path {
+                            stroke-dasharray: 3500;
+                            stroke-dashoffset:-3500;
+                            fill-opacity: 0;
+                            animation: draw 6s infinite forwards ease-in-out;	
+                        }
+                        @keyframes draw {
+                            50%{fill-opacity: 0;}
+                            55%{stroke-dashoffset: 0;}
+                            60%{fill-opacity: .5;}
+                            63%{fill-opacity: 0;}
+                            65%{fill-opacity: 1;}
+                            67%{fill-opacity: 0;}
+                            90%{fill-opacity: 1; stroke-dashoffset: 0;}
+                            100%{stroke-width: 0; fill-opacity: 1; stroke-dashoffset: 0;}
+                        }
+            </style>
+        <g filter="url(#filter0_d_120_8)">
+        <path d="M373.963 882.844L613.611 763.02L1033 963.26V1194.39L33 1663.17L57.2311 1418.06L801.872 1075.1L373.963 882.844Z" fill="#FF422E"/>
+        <path d="M1033 963.26L613.611 763.02L373.963 882.844L801.872 1075.1M1033 963.26L801.872 1075.1M1033 963.26V1194.39L33 1663.17L57.2311 1418.06L801.872 1075.1" stroke="white"/>
+        <path d="M67.746 425.911V186.263L706.807 492.48V718.814L94.3736 1011.72V785.383L440.532 612.304L67.746 425.911Z" fill="#57D3F3"/>
+        <path d="M440.532 612.304L67.746 425.911V186.263L706.807 492.48M440.532 612.304L706.807 492.48M440.532 612.304L94.3736 785.383V1011.72L706.807 718.814V492.48" stroke="white"/>
+        </g>
+        <defs>
+        <filter id="filter0_d_120_8" x="0.415894" y="181.469" width="1033.08" height="1506.52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dx="-18" dy="10"/>
+        <feGaussianBlur stdDeviation="7"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.53 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_120_8"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_120_8" result="shape"/>
+        </filter>
+        </defs>
+        </svg>
+</body>
+</html>
